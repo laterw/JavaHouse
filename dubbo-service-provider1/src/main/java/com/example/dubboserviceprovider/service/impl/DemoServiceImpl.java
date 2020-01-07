@@ -1,7 +1,8 @@
 package com.example.dubboserviceprovider.service.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.example.dubboserviceapi.service.DemoService;
+import org.apache.dubbo.config.annotation.Method;
+import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DemoServiceImpl implements DemoService {
     int count=0;
+    @Method()
     @Override
     public String sayHello(String name) {
         count+=1;

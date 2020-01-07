@@ -3,10 +3,14 @@ dubbo:
     name: boot-hello-provider
   registry:
     address: zookeeper://127.0.0.1:2181
+    protocol: zookeeper
+
   metadata-report:
     address: zookeeper://127.0.0.1:2181
   protocol:
     name: dubbo
-    port: 20880
+    port: -1
+    threadpool: fixed
+    threads: 200
 server:
   port: 7070
